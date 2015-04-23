@@ -10,13 +10,7 @@ run     wget https://github.com/mwduarte/glassfish41/archive/master.zip -O /tmp/
 run     mkdir /var/lib/tsuru
 run     tar -xvf basebuilder.tar.gz -C /var/lib/tsuru --strip 1
 run     cd /var/lib/tsuru && unzip /tmp/glassfish41.zip && mv glassfish41-master glassfish41 && chown ubuntu:ubuntu glassfish41 && -f /tmp/glassfish41.zip
-run     cp /var/lib/tsuru/java/deploy /var/lib/tsuru
-run     cp /var/lib/tsuru/java/start /var/lib/tsuru
-run     mkdir /var/lib/tsuru/glassfish41
-run     cd /var/lib/tsuru/java
-run     tar cvf - * | (cd ../glassfish41; tar xvf -)
+run     cp /var/lib/tsuru/glassfish41/deploy /var/lib/tsuru
+run     cp /var/lib/tsuru/glassfish41/start /var/lib/tsuru
 run     cd /
-run     cat /var/lib/tsuru/glassfish41/install | grep -v tomcat7 > /tmp/install.temp
-run     mv /tmp/install.temp /var/lib/tsuru/glassfish41/install
-run     chmod 700 /var/lib/tsuru/glassfish41/install
 run     /var/lib/tsuru/glassfish41/install
