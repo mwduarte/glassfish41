@@ -28,8 +28,6 @@ wget http://download.java.net/glassfish/4.1/release/glassfish-4.1.zip
 
 cd /usr/share
 
-apt-get install unzip
-
 unzip /tmp/glassfish-4.1.zip
 
 sudo chown -R ${USER}:${USER} /usr/share/glassfish4
