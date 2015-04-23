@@ -10,7 +10,7 @@ run     wget http://github.com/tsuru/basebuilder/tarball/master -O basebuilder.t
 run     wget https://github.com/mwduarte/glassfish41/archive/master.zip -O /tmp/glassfish41.zip --no-check-certificate
 run     mkdir /var/lib/tsuru
 run     tar -xvf basebuilder.tar.gz -C /var/lib/tsuru --strip 1
-run     cd /var/lib/tsuru && unzip /tmp/glassfish41.zip && mv glassfish41-master glassfish41 && chown -R ${USER}:${USER} glassfish41 && -f /tmp/glassfish41.zip
+run     cd /var/lib/tsuru && unzip /tmp/glassfish41.zip && mv glassfish41-master glassfish41 && chown -R ${USER}:${USER} glassfish41 && rm -f /tmp/glassfish41.zip
 run     cp /var/lib/tsuru/glassfish41/deploy /var/lib/tsuru
 run     cp /var/lib/tsuru/glassfish41/start /var/lib/tsuru
 run     cd /
