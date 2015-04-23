@@ -1,0 +1,43 @@
+/usr/lib/jvm/java-8-oracle/bin/java \
+-cp /usr/share/glassfish4/glassfish/modules/glassfish.jar \
+-XX:+UnlockDiagnosticVMOptions \
+-XX:MaxPermSize=192m \
+-XX:NewRatio=2 \
+-Xmx1024m \
+-javaagent:/usr/share/glassfish4/glassfish/lib/monitor/flashlight-agent.jar \
+-client \
+-Dfelix.fileinstall.disableConfigSave=false \
+-Djavax.net.ssl.keyStore=/usr/share/glassfish4/glassfish/domains/domain1/config/keystore.jks \
+-Djava.awt.headless=true \
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true \
+-Dfelix.fileinstall.poll=5000 \
+-Djava.endorsed.dirs=/usr/share/glassfish4/glassfish/modules/endorsed:/usr/share/glassfish4/glassfish/lib/endorsed \
+-Dfelix.fileinstall.bundles.startTransient=true \
+-Djavax.net.ssl.trustStore=/usr/share/glassfish4/glassfish/domains/domain1/config/cacerts.jks \
+-Djavax.xml.accessExternalSchema=all \
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as \
+-Djava.security.auth.login.config=/usr/share/glassfish4/glassfish/domains/domain1/config/login.conf \
+-DANTLR_USE_DIRECT_CLASS_LOADING=true \
+-Dgosh.args=--nointeractive \
+-Dosgi.shell.telnet.maxconn=1 \
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver \
+-Dfelix.fileinstall.dir=/usr/share/glassfish4/glassfish/modules/autostart/ \
+-Dosgi.shell.telnet.port=6666 \
+-Djava.security.policy=/usr/share/glassfish4/glassfish/domains/domain1/config/server.policy \
+-Dfelix.fileinstall.log.level=2 \
+-Dcom.sun.aas.instanceRoot=/usr/share/glassfish4/glassfish/domains/domain1 \
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory \
+-Dosgi.shell.telnet.ip=127.0.0.1 \
+-Dcom.sun.aas.installRoot=/usr/share/glassfish4/glassfish \
+-Djava.ext.dirs=/usr/lib/jvm/java-8-oracle/lib/ext:/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/share/glassfish4/glassfish/domains/domain1/lib/ext \
+-Dfelix.fileinstall.bundles.new.start=true \
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall \
+-Djdk.corba.allowOutputStreamSubclass=true \
+-Djava.library.path=/usr/share/glassfish4/glassfish/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib \
+com.sun.enterprise.glassfish.bootstrap.ASMain \
+-domainname domain1 \
+-asadmin-args --host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/usr/share/glassfish4/glassfish/domains,,,domain1 \
+-instancename \
+server -verbose false -debug false -asadmin-classpath /usr/share/glassfish4/glassfish/lib/client/appserver-cli.jar \
+-asadmin-classname com.sun.enterprise.admin.cli.AdminMain
+-upgrade false -type DAS -domaindir /usr/share/glassfish4/glassfish/domains/domain1 -read-stdin true
