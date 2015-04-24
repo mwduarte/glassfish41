@@ -1,7 +1,0 @@
-# Add hooks.py and add-key
-from    10.0.2.5:3030/tsuru/glassfish41:latest
-run     cd /tmp
-run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/hooks.py -O /tmp/hooks.py --no-check-certificate
-run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/add-key -O /tmp/addkey --no-check-certificate
-run     mv /tmp/hooks.py /var/lib/tsuru && chown 1000:1000 /var/lib/tsuru/hooks.py
-run     mv /tmp/addkey /var/lib/tsuru/add-key && chmod 775 /var/lib/tsuru/add-key
