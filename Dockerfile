@@ -3,9 +3,9 @@
 # 1- run: $ tsuru-admin platform-add glassfish41 -d https://raw.githubusercontent.com/mwduarte/glassfish41/master/Dockerfile
 
 from    ubuntu:14.04
-run     export DEBIAN_FRONTEND=noninteractive && apt-get update
-run     export DEBIAN_FRONTEND=noninteractive && apt-get install wget -y --force-yes
-run     export DEBIAN_FRONTEND=noninteractive && apt-get install unzip -y --force-yes
+run     DEBIAN_FRONTEND=noninteractive && apt-get update
+run     DEBIAN_FRONTEND=noninteractive && apt-get install wget -y --force-yes
+run     DEBIAN_FRONTEND=noninteractive && apt-get install unzip -y --force-yes
 run     wget http://github.com/tsuru/basebuilder/tarball/master -O basebuilder.tar.gz --no-check-certificate
 run     wget https://github.com/mwduarte/glassfish41/archive/master.zip -O /tmp/glassfish41.zip --no-check-certificate
 run     mkdir /var/lib/tsuru
@@ -14,8 +14,4 @@ run     cd /var/lib/tsuru && unzip /tmp/glassfish41.zip && mv glassfish41-master
 run     cp /var/lib/tsuru/glassfish41/deploy /var/lib/tsuru
 run     cp /var/lib/tsuru/glassfish41/start /var/lib/tsuru
 run     cd /
-run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/hooks.py -O /tmp/hooks.py --no-check-certificate
-run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/add-key -O /tmp/addkey --no-check-certificate
-run     mv /tmp/hooks.py /var/lib/tsuru && chmod 775 /var/lib/tsuru/hooks.py
-run     mv /tmp/addkey /var/lib/tsuru/add-key && chmod 775 /var/lib/tsuru/add-key
 run     /var/lib/tsuru/glassfish41/install
