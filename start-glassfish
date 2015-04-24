@@ -43,5 +43,5 @@ com.sun.enterprise.glassfish.bootstrap.ASMain \
 -asadmin-args --host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/usr/share/glassfish4/glassfish/domains,,,domain1 \
 -instancename \
 server -verbose false -debug false -asadmin-classpath /usr/share/glassfish4/glassfish/lib/client/appserver-cli.jar \
--asadmin-classname com.sun.enterprise.admin.cli.AdminMain
+-asadmin-classname com.sun.enterprise.admin.cli.AdminMain \
 -upgrade false -type DAS -domaindir /usr/share/glassfish4/glassfish/domains/domain1 -read-stdin true
