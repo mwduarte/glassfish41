@@ -3,9 +3,9 @@
 # 1- run: $ tsuru-admin platform-add glassfish41 -d https://raw.githubusercontent.com/mwduarte/glassfish41/master/Dockerfile
 
 from    ubuntu:14.04
-run     apt-get update
-run     apt-get install wget -y --force-yes
-run     apt-get install unzip -y --force-yes
+run     export DEBIAN_FRONTEND=noninteractive && apt-get update
+run     export DEBIAN_FRONTEND=noninteractive && apt-get install wget -y --force-yes
+run     export DEBIAN_FRONTEND=noninteractive && apt-get install unzip -y --force-yes
 run     wget http://github.com/tsuru/basebuilder/tarball/master -O basebuilder.tar.gz --no-check-certificate
 run     wget https://github.com/mwduarte/glassfish41/archive/master.zip -O /tmp/glassfish41.zip --no-check-certificate
 run     mkdir /var/lib/tsuru
