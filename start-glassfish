@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 source /home/ubuntu/.profile
 
 /usr/lib/jvm/java-8-oracle/bin/java \
