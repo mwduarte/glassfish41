@@ -1,0 +1,7 @@
+# this file describes how to build tsuru glassfish41 image
+# to run it:
+# 1- run: $ tsuru-admin platform-add glassfish41 -d https://raw.githubusercontent.com/mwduarte/glassfish41/master/Dockerfile
+
+from    10.0.2.5:3030/tsuru/glassfish41:latest
+run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/start-glassfish -O /tmp/startglassfish --no-check-certificate
+run     mv /tmp/startglassfish /var/lib/tsuru/glassfish41/start-glassfish && chown ${USER}:${USER} /var/lib/tsuru/glassfish41/start-glassfish && chmod 775 /var/lib/tsuru/glassfish41/start-glassfish && rm -f /tmp/startglassfish 
