@@ -1,1 +1,1 @@
-glassfish41: /var/lib/tsuru/java/start-glassfish
+glassfish41: /var/lib/tsuru/glassfish41/start-glassfish
