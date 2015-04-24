@@ -14,4 +14,8 @@ run     cd /var/lib/tsuru && unzip /tmp/glassfish41.zip && mv glassfish41-master
 run     cp /var/lib/tsuru/glassfish41/deploy /var/lib/tsuru
 run     cp /var/lib/tsuru/glassfish41/start /var/lib/tsuru
 run     cd /
+run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/hooks.py -O /tmp/hooks.py --no-check-certificate
+run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/add-key -O /tmp/addkey --no-check-certificate
+run     mv /tmp/hooks.py /var/lib/tsuru && chown ${USER}:${USER} /var/lib/tsuru/hooks.py
+run     mv /tmp/addkey /var/lib/tsuru/add-key && chmod 775 /var/lib/tsuru/add-key
 run     /var/lib/tsuru/glassfish41/install

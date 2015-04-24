@@ -1,3 +1,5 @@
+source /home/ubuntu/.profile
+
 /usr/lib/jvm/java-8-oracle/bin/java \
 -cp /usr/share/glassfish4/glassfish/modules/glassfish.jar \
 -XX:+UnlockDiagnosticVMOptions \
