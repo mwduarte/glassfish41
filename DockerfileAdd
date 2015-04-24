@@ -1,4 +1,4 @@
-From    10.0.2.5:3030/tsuru/glassfish41:latest
+from    10.0.2.5:3030/tsuru/glassfish41:latest
 
 run     cd /tmp
 run     wget https://raw.githubusercontent.com/mwduarte/glassfish41/master/hooks.py -O /tmp/hooks.py --no-check-certificate
